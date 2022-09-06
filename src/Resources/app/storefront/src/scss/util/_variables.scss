@@ -1,0 +1,64 @@
+/*------------------*
+# Variables
+*------------------*/
+
+// Breakpoints
+$desktop-lg: rem(1919); // Wide Desktop Screens (Above 1680 - Large Screens)
+$desktop-md: rem(1620); // Medium Desktop Screens (Like 1480 - Macbook & Macbook Pro)
+$desktop-sm: rem(1420); // Small Desktop Screens
+$desktop-xs: rem(1360); // Small Desktop Screens
+
+$tablet-lg: rem(1080); // Landscape Tablet
+$tablet-md: rem(991); // Portrait Medium Tablet
+$tablet-sm: rem(865); // Portrait Tablet
+
+$mobile-lg: rem(767); // Mobile Landscale
+$mobile-md: rem(576); // Mobile Medium Portrait
+$mobile-sm: rem(540); // Mobile Portrait
+
+/*
+* Paths
+*/
+$mainlink-assets-path: "/dist";
+$mainlink-font-path: "../fonts";
+
+/*
+* Fonts
+*/
+
+$font-header:  'SFProDisplay-Heavy';
+$font-regular: 'SFProText-Regular'; 
+$font-medium: 'SFProText-Medium'; 
+$font-semibold: 'SFProText-Semibold'; 
+$font-bold: "SFProText-BoldItalic"; 
+
+/*
+ * Base colors
+*/
+
+// Theme colours
+
+$primary-color: #111827;
+$secondary-color: #6B7280;
+
+$light-color: #F3F4F6; 
+$border-color:#E6E7EB; 
+$icon-color: #9CA3AF; 
+
+// Status messages
+
+$process-bg:#FEF3C7;
+$process-dot: #FBBF23;
+$process-text:#92400D; 
+
+$success-bg:#D1FAE5;
+$success-dot: #34D399;
+$success-text:#065F46;
+ 
+$failed-bg:#FFE2E2;
+$failed-dot: #F97171;
+$failed-text:#991B1B;
+ 
+//Other Colors
+$white-color: #fff;
+$black-color: #000;
