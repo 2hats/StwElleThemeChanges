@@ -1,0 +1,36 @@
+{
+  "name": "stw/stw-elle-theme-changes",
+  "description": "Stw Elle Theme Changes",
+  "type": "shopware-platform-plugin",
+  "version":"1.0.0",
+  "license":"proprietary",
+  "prefer-stable": true,
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Heinz Winter GmbH",
+      "homepage": "https://studio-winter.de/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "StwElleThemeChanges\\": "src/"
+    }
+  },
+  "require": {
+    "shopware/core": "^6.0",
+    "shopware/storefront": "^6.0",
+    "shopware/administration": "^6.0"
+  },
+  "extra": {
+    "shopware-plugin-class": "StwElleThemeChanges\\StwElleThemeChanges",
+    "label": {
+      "de-DE": "Stw Elle Theme Changes",
+      "en-GB": "Stw Elle Theme Changes"
+    },
+    "description": {
+      "de-DE": "This plugin will update custome changes in Elle theme",
+      "en-GB": "This plugin will update custome changes in Elle theme"
+    }
+  }
+}
