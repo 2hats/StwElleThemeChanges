@@ -1,0 +1,46 @@
+{% sw_extends '@Storefront/storefront/layout/header/account-menu.html.twig' %}
+
+{% block utilities_offcanvas_content %}
+    <div class="account-menu">
+    <div class="footer-menu">
+    									{% for root in page.footer.navigation.tree %}
+						{% block layout_footer_navigation_column %}
+
+								{% block layout_footer_navigation_information_content %}
+										<div class="footer-column-content-inner">
+											{% block layout_footer_navigation_information_links %}
+												<ul class="list-unstyled">
+													{% for treeItem in root.children %}
+														{% set category = treeItem.category %}
+														{% set name = category.translated.name %}
+
+														{# @deprecated tag:v6.5.0 - Use "category.translated.externalLink" directly or category_url function instead. #}
+														{% set externalLink = category.translated.externalLink %}
+
+														{% block layout_footer_navigation_information_link_item %}
+															<li class="footer-menu__item">
+																{% block layout_footer_navigation_information_link %}
+																	{% if category.type == 'folder' %}
+																		<div>{{ name }}</div>
+																	{% else %}
+																		<a class="footer-link" href="{{ category_url(category) }}" {% if category_linknewtab(category) %} target="_blank" {% endif %} title="{{ name }}">
+																			{{ name }} 
+																		</a>
+																	{% endif %}
+																{% endblock %}
+															</li>
+														{% endblock %}
+													{% endfor %}
+												</ul>
+											{% endblock %}
+										</div>
+									
+								{% endblock %}
+							
+						{% endblock %}
+					{% endfor %}
+
+    </div>
+   
+    </div>
+{% endblock %}

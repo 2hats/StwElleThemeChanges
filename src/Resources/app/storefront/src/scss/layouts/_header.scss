@@ -1,3 +1,55 @@
-header {
-    background-color: aqua;
+.header{
+    &-main{
+        width: 100%;
+        .nav-main{
+            position: relative;
+        }
+        .navigation-flyout {
+            width: auto;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            right: 0;
+        }
+    }
+    &-row{
+        position: relative;
+    }
+    &-search-col{
+        position: absolute;
+        right: 0;
+        max-width: 400px;
+        top: 80px;
+        .collapse:not(.show) {
+            display: none;
+        }
+    }
+    &-actions-item{
+        position: relative;
+        margin-right: 1px;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 50%;
+            right: 0;
+            top: 25%;
+            background-color: black;
+        }
+        &:last-child{
+            &::after{
+                display: none;
+            }
+        }
+        .btn {
+            line-height: 1;
+
+            [class*='icon-'] {
+                color: black;
+                &> svg {
+                    top: 0 !important;
+                }
+            }
+        }
+    }
 }
