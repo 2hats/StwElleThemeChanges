@@ -1,11 +1,18 @@
 {% block layout_footer_inner_container %}
+{% set salesChannelCF = context.salesChannel.customFields %}
 	<div class="container">
 
 		{% block layout_footer_navigation %}
 			<div id="footerColumns" class="custom-elle-footer" data-collapse-footer="true" role="list">
-				{% block layout_footer_navigation_hotline %}
+
 					<div class="custom-elle-footer__column">
-						{% block layout_footer_navigation_hotline_headline %}
+					 {% if salesChannelCF['elle_custom_footer_snippet_1'] is defined and not salesChannelCF['elle_custom_footer_snippet_1'] is empty %}
+                            <div class="footer-snippet">
+                                    {{salesChannelCF['elle_custom_footer_snippet_1']|nl2br}}
+                            </div>
+                        {% endif %}
+
+						{# {% block layout_footer_navigation_hotline_headline %}
 							<div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger" id="collapseFooterHotlineTitle" {{ dataBsTargetAttr }}="#collapseFooterHotline" aria-expanded="true" aria-controls="collapseFooterHotline" role="listitem">
 								{{ 'footer.serviceHotlineHeadline'|trans|sw_sanitize }}
 								{% block layout_footer_navigation_hotline_icons %}
@@ -19,9 +26,9 @@
 									</div>
 								{% endblock %}
 							</div>
-						{% endblock %}
+						{% endblock %} #}
 
-						{% block layout_footer_navigation_hotline_content %}
+						{# {% block layout_footer_navigation_hotline_content %}
 							<div id="collapseFooterHotline" class="footer-column-content collapse js-footer-column-content footer-contact" aria-labelledby="collapseFooterHotlineTitle">
 								<div class="footer-column-content-inner">
 									<p class="footer-contact-hotline">
@@ -34,16 +41,23 @@
                                     })|raw }}
 								</div>
 							</div>
-						{% endblock %}
+						{% endblock %} #}
 					</div>
-				{% endblock %}
+	
 
 				<div class="custom-elle-footer__column">
+
+				 {% if salesChannelCF['elle_custom_footer_snippet_2'] is defined and not salesChannelCF['elle_custom_footer_snippet_2'] is empty %}
+                            <div class="footer-snippet">
+                                    {{salesChannelCF['elle_custom_footer_snippet_2']|nl2br}}
+                            </div>
+                        {% endif %}
 				
 				</div>
 
-				{% block layout_footer_navigation_columns %}
+			
 				<div class="custom-elle-footer__column">
+					{% block layout_footer_navigation_columns %}
 									{% for root in page.footer.navigation.tree %}
 						{% block layout_footer_navigation_column %}
 
@@ -80,11 +94,20 @@
 							
 						{% endblock %}
 					{% endfor %}
+					{% endblock %}
+				
+				</div>
+
+				<div class="custom-elle-footer__column">
+
+				 {% if salesChannelCF['elle_custom_footer_snippet_3'] is defined and not salesChannelCF['elle_custom_footer_snippet_3'] is empty %}
+                            <div class="footer-snippet">
+                                    {{salesChannelCF['elle_custom_footer_snippet_3']|nl2br}}
+                            </div>
+                        {% endif %}
 				
 				</div>
 				
-
-				{% endblock %}
 			</div>
 		{% endblock %}
 
