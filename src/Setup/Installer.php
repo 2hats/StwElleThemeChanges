@@ -92,48 +92,50 @@ class Installer
                     'de-DE' => 'Fußzeilenausschnitte',
                 ]],
                 'customFields' => [
+                    
                     [
                         'id' => Uuid::randomHex(),
                         'name' => 'elle_custom_footer_snippet_1',
-                        'type' => 'text',
+                        'type' => 'html',
                         'config' => [
                             'label' => [
                                 'en-GB' => 'footer snippet one',
                                 'de-DE' => 'Fußzeilenausschnitt eins',
                             ],
-                            'componentName' => 'sw-textarea-field',
-                            'customFieldType' => 'textarea',
+                            'componentName' => 'sw-text-editor',
+                            'customFieldType' => 'textEditor',
                             'customFieldPosition' => 1,
                         ],
                     ],
                     [
                         'id' => Uuid::randomHex(),
                         'name' => 'elle_custom_footer_snippet_2',
-                        'type' => 'text',
+                        'type' => 'html',
                         'config' => [
                             'label' => [
                                 'en-GB' => 'footer snippet two',
                                 'de-DE' => 'Fußzeilenausschnitt zwei',
                             ],
-                            'componentName' => 'sw-textarea-field',
-                            'customFieldType' => 'textarea',
+                            'componentName' => 'sw-text-editor',
+                            'customFieldType' => 'textEditor',
                             'customFieldPosition' => 2,
                         ],
                     ],
                     [
                         'id' => Uuid::randomHex(),
                         'name' => 'elle_custom_footer_snippet_3',
-                        'type' => 'text',
+                        'type' => 'html',
                         'config' => [
                             'label' => [
                                 'en-GB' => 'footer snippet three',
                                 'de-DE' => 'Fußzeilenausschnitt drei',
                             ],
-                            'componentName' => 'sw-textarea-field',
-                            'customFieldType' => 'textarea',
+                            'componentName' => 'sw-text-editor',
+                            'customFieldType' => 'textEditor',
                             'customFieldPosition' => 3,
                         ],
                     ],
+
                 ],
                 'relations' => [
                     [
