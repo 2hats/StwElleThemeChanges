@@ -1,0 +1,13 @@
+.elle-custom-header-inner{
+    .main-navigation{
+        &-link{
+            padding-right: rem(100) !important;
+            font-size: rem(20);
+            font-family: $font-light;
+            @extend .theme-hover;
+            &:last-child{
+                padding-right: 0 !important;
+            }
+        }
+    }
+}

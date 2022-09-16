@@ -2,6 +2,14 @@
 @import "./util/mixins";
 @import "./util/variables";
 
+// base
+@import "./base/typography";
+@import "./base/common";
+@import "./base/global";
+
+
 // Layouts
 @import "./layouts/header";
 @import "./layouts/footer";
+
+@import "./components/main-navigation";

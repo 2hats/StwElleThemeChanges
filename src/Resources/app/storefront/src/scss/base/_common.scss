@@ -1,0 +1,7 @@
+.theme-hover{
+    &:hover,
+    &:active,
+    &:focus {
+        color: $primary-color;
+    }
+}

@@ -83,7 +83,7 @@
 */
 
 @mixin font-face($variant, $type, $weight, $style) {
-  $font-full-path: "#{$mainlink-font-path}/#{$variant}/#{$variant}";
+  $font-full-path: "#{$plugin-font-path}/#{$variant}/#{$variant}";
 
   @font-face {
     font-family: "#{$variant}";

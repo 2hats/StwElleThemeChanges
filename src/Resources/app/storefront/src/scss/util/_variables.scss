@@ -3,12 +3,12 @@
 *------------------*/
 
 // Breakpoints
-$desktop-lg: rem(1919); // Wide Desktop Screens (Above 1680 - Large Screens)
+$desktop-lg: rem(1920); // Wide Desktop Screens (Above 1680 - Large Screens)
 $desktop-md: rem(1620); // Medium Desktop Screens (Like 1480 - Macbook & Macbook Pro)
-$desktop-sm: rem(1420); // Small Desktop Screens
-$desktop-xs: rem(1360); // Small Desktop Screens
+$desktop-sm: rem(1440); // Small Desktop Screens
+$desktop-xs: rem(1366); // Small Desktop Screens
 
-$tablet-lg: rem(1080); // Landscape Tablet
+$tablet-lg: rem(1199); // Landscape Tablet
 $tablet-md: rem(991); // Portrait Medium Tablet
 $tablet-sm: rem(865); // Portrait Tablet
 
@@ -19,29 +19,30 @@ $mobile-sm: rem(540); // Mobile Portrait
 /*
 * Paths
 */
-$mainlink-assets-path: "/dist";
-$mainlink-font-path: "../fonts";
+
+$plugin-assets-path: '/bundles/stwellethemechanges/assets';
+$plugin-font-path: '/bundles/stwellethemechanges/assets/fonts';
 
 /*
 * Fonts
 */
 
-$font-header:  'SFProDisplay-Heavy';
-$font-regular: 'SFProText-Regular'; 
-$font-medium: 'SFProText-Medium'; 
-$font-semibold: 'SFProText-Semibold'; 
-$font-bold: "SFProText-BoldItalic"; 
-
+$fallback-fonts:Arial, Helvetica, sans-serif;
+$font-light: 'Aller-Light';
+$font-regular: 'Aller-Regular';
+$font-bold: 'Aller-Bold';
 /*
  * Base colors
 */
 
+
 // Theme colours
 
-$primary-color: #111827;
-$secondary-color: #6B7280;
+$primary-color: #a81e1e;
+$secondary-color: #383838;
+$text-color: #000000;
 
-$light-color: #F3F4F6; 
+$light-grey-color: #f5f5f5; 
 $border-color:#E6E7EB; 
 $icon-color: #9CA3AF; 
 
@@ -62,3 +63,6 @@ $failed-text:#991B1B;
 //Other Colors
 $white-color: #fff;
 $black-color: #000;
+
+//other
+$theme-shadow: 0 3px 6px 0 rgba(0,0,0, 0.16);

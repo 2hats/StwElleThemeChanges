@@ -1,54 +1,146 @@
-.header{
-    &-main{
-        width: 100%;
-        .nav-main{
+.elle-custom-header {
+    .header {
+        &-main {
+            width: 100%;
+            height: rem(100);
+            background-color: $light-grey-color;
+            box-shadow: $theme-shadow;
+
+            .nav-main {
+                position: relative;
+            }
+
+            .navigation-flyout {
+                width: auto;
+                position: fixed;
+                top: 100px;
+                left: 0;
+                right: 0;
+            }
+            .account-menu{
+                padding: rem(20) 0;
+                .footer-column-content-inner{
+                    margin: 0;
+                    padding: 0;
+                    ul{
+                        margin:0;
+                        a{
+                            font-size: rem(18);
+                            line-height: 1.4;
+                            @extend .theme-hover;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-logo {
+            &-col {
+                margin: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            &-main {
+                &-link {
+                    margin: 0;
+                    padding: 0;
+                    @include flex(center, center);
+                    width: rem(180);
+                    height: rem(140);
+                    background-color: $white-color;
+                    box-shadow: $theme-shadow;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-width: rem(110);
+                        max-height: rem(180);
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            &-space {
+                display: block;
+                width: rem(180);
+            }
+        }
+
+        &-row {
             position: relative;
+            height: rem(100);
+            padding: 20px 0;
         }
-        .navigation-flyout {
-            width: auto;
-            position: fixed;
-            top: 100px;
-            left: 0;
-            right: 0;
-        }
-    }
-    &-row{
-        position: relative;
-    }
-    &-search-col{
-        position: absolute;
-        right: 0;
-        max-width: 400px;
-        top: 80px;
-        .collapse:not(.show) {
-            display: none;
-        }
-    }
-    &-actions-item{
-        position: relative;
-        margin-right: 1px;
-        &::after{
-            content: '';
+
+        &-search-col {
             position: absolute;
-            width: 1px;
-            height: 50%;
             right: 0;
-            top: 25%;
-            background-color: black;
-        }
-        &:last-child{
-            &::after{
+            max-width: rem(400);
+            top: 80px;
+
+            .collapse:not(.show) {
                 display: none;
             }
         }
-        .btn {
-            line-height: 1;
 
-            [class*='icon-'] {
-                color: black;
-                &> svg {
-                    top: 0 !important;
+        &-actions-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: rem(18) !important;
+            padding-right: rem(18) !important;
+            height: rem(40);
+            .icon{
+                width: rem(20);
+                height:rem(20);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 50%;
+                right: 0;
+                top: 25%;
+                background-color: black;
+            }
+
+            .btn {
+
+                line-height: 1;
+
+                [class*='icon-'] {
+                    color: black;
+
+                    &>svg {
+                        top: 0 !important;
+                    }
                 }
+            }
+
+            &:first-child {
+                padding-left: 0 !important;
+            }
+
+            &:last-child {
+                padding-right: 0 !important;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .menu-toggler-item{
+        @include flex(center,center);
+        .btn {
+            padding-left: 15px;
+            padding-right: 0;
+            .icon > svg {
+                top: 3px;
             }
         }
     }
