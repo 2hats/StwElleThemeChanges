@@ -3,8 +3,12 @@
         &-main {
             width: 100%;
             height: rem(100);
+            z-index: 999;
             background-color: $light-grey-color;
             box-shadow: $theme-shadow;
+            @include tablet-lg(){
+                height: auto;
+            }
 
             .nav-main {
                 position: relative;
@@ -51,13 +55,34 @@
                     height: rem(140);
                     background-color: $white-color;
                     box-shadow: $theme-shadow;
-
+                    @include tablet-lg(){
+                        width: rem(160);
+                        height: rem(120);
+                    }
+                    @include tablet-md(){
+                        width: rem(140);
+                        height: rem(100);
+                    }
+                    @include mobile-lg(){
+                        background-color: $white-color;
+                        box-shadow: none;
+                        width: rem(100);
+                        height: rem(80);
+                    }
                     img {
                         width: 100%;
                         height: auto;
                         max-width: rem(110);
                         max-height: rem(180);
                         object-fit: contain;
+                        @include tablet-lg(){
+                            max-width: rem(80);
+                            max-height: rem(140);
+                        }
+                        @include tablet-md(){
+                            max-width: rem(60);
+                            max-height: rem(60);
+                        }
                     }
                 }
             }
@@ -65,6 +90,9 @@
             &-space {
                 display: block;
                 width: rem(180);
+                @include tablet-md(){
+                    width: rem(60);
+                }
             }
         }
 
@@ -72,6 +100,17 @@
             position: relative;
             height: rem(100);
             padding: 20px 0;
+            align-items: flex-end;
+            justify-content: space-between;
+            @include tablet-lg(){
+                height: rem(80);
+                align-items: center;
+            }
+        }
+        &-search{
+            .header-search-rectangle{
+                border-top: 0 !important;
+            }
         }
 
         &-search-col {
