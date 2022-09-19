@@ -1,19 +1,52 @@
 {% sw_extends '@Storefront/storefront/layout/navigation/flyout.html.twig' %}
 
 {% block layout_navigation_flyout %}
+<div class="elle-custom-flyout-inner">
 	{% set category = navigationTree.category %}
 	{% set name = category.translated.name %}
 	{% block layout_navigation_flyout_bar %}
-		<div class="row navigation-flyout-bar">
+		<div class="row navigation-flyout-bar elle-custom-flyout-bar">
 			{% block layout_navigation_flyout_bar_close %}
 				{{ parent() }}
 			{% endblock %}
 		</div>
 	{% endblock %}
 	{% block layout_navigation_flyout_content %}
-		{{ parent() }}
+		 <div class="row navigation-flyout-content elle-custom-flyout-content">
+            {% block layout_navigation_flyout_categories %}
+                <div class="col-12">
+                    <div class="navigation-flyout-categories elle-custom-navigation-flyout-categories">
+                        {% block layout_navigation_flyout_categories_recoursion %}
+                           {{ parent() }}
+                        {% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+		</div>
 	{% endblock %}
 	{% block layout_navigation_flyout_bar_category %}
-		{{ parent() }}
+		<div class="navigation-flyout-category-link elle-custom-flyout-category-link">
+                        {% block layout_navigation_flyout_bar_category_link %}
+                            {% if category.type == 'page' %}
+                                <a class="nav-link"
+                                   href="{{ seoUrl('frontend.navigation.page', { navigationId: category.id }) }}"
+                                   itemprop="url"
+                                   title="{{ name }}">
+                                    {% block layout_navigation_flyout_bar_category_link_text %}
+									  {% sw_icon 'navigate-right' style {
+											'namespace': 'StwElleThemeChanges',
+											'pack': 'solid'
+                                        } %}
+
+                                        {{ "general.toCategory"|trans|sw_sanitize }} {{ name }}
+                                      
+                                    {% endblock %}
+                                </a>
+                            {% endif %}
+                        {% endblock %}
+                    </div>
 	{% endblock %}
+	</div>
 {% endblock %}
+
+

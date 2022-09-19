@@ -22,7 +22,9 @@
                     {% set mediaCollection = searchMedia([iconId], context.context) %}
                     {% set iconMedia = mediaCollection.get(iconId) %}
                     {% set iconUrl = iconMedia.url %}
-                    <img src="{{iconUrl}}">
+
+                    <img class="elle-category-icon" style="-webkit-mask-image: url('{{iconUrl}}');
+  mask-image: url('{{iconUrl}}');">
                 {% endif %}
              {% endif %}
             {{ name }}</span>

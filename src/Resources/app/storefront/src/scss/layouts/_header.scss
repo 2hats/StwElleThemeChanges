@@ -3,7 +3,7 @@
         &-main {
             width: 100%;
             height: rem(100);
-            z-index: 999;
+            z-index: 10;
             background-color: $light-grey-color;
             box-shadow: $theme-shadow;
             @include tablet-lg(){
@@ -16,8 +16,8 @@
 
             .navigation-flyout {
                 width: auto;
-                position: fixed;
-                top: 100px;
+                position: absolute;
+                top: 0;
                 left: 0;
                 right: 0;
             }
@@ -44,6 +44,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+                z-index: 999;
             }
 
             &-main {

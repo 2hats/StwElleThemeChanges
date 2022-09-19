@@ -1,0 +1,63 @@
+.elle-custom-flyout{
+    &-content{
+        padding: rem(100) 0  rem(60) !important;
+        .elle-custom-navigation-flyout-categories{
+            .navigation-flyout{
+                &-col{
+                    margin-bottom: rem(25) !important;
+                    .elle-category-icon{
+                        width: rem(24);
+                        height: rem(24);
+                        object-fit: contain;
+                        object-position: center;
+                        margin-right: rem(15);
+                        mask-size: 100vmin;
+                        -webkit-mask-size: contain;
+                        mask-size: contain;
+                        mask-position: center;
+                        -webkit-mask-position: center;
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        background-color: $secondary-color !important;
+                    }
+                    .navigation-flyout-link{
+                        color: $secondary-color !important;
+                        &:hover{
+                            padding-left: 0;
+                            color: $primary-color !important;
+                            .elle-category-icon{
+                                mask-size: 100vmin;
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                                background-color: $primary-color !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    &-category-link{
+        .nav-link{
+            display: flex;
+            align-items: center;
+            padding-bottom: rem(40);
+            &:hover,
+            &:focus {
+                .icon{
+                    color: $primary-color;
+                }
+            }
+            .icon{
+                width: rem(26);
+                height: rem(23);
+                margin-right: rem(14);
+               & > svg{
+                top: 0;
+               }
+            }
+        }
+    }
+    
+}

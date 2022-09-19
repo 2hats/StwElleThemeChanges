@@ -2,3 +2,9 @@
 {% block layout_main_navigation_menu_home %}
  
 {% endblock %}
+
+{% block layout_main_navigation_menu_flyout_container %}
+   <div class="elle-custom-flyout-inner">
+        {{parent()}}
+  </div>
+{% endblock %}
