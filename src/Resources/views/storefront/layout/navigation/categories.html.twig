@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/categories.html.twig' %}
+ 
+{% block layout_navigation_categories_item_link %}
+    {% if treeItem.category.type == 'folder' %}
+        <div class="nav-item nav-link navigation-flyout-link is-level-{{ level }}"
+                title="{{ name }}">
+            <span itemprop="name">{{ name }}</span>
+        </div>
+    {% else %}
+        <a class="nav-item nav-link navigation-flyout-link is-level-{{ level }}{% if id == activeId or id in activePath %} active{% endif %}"
+            href="{{ link }}"
+            itemprop="url"
+            {% if category_linknewtab(treeItem.category) %}target="_blank"
+                {% if treeItem.category.linkType == "external" %}rel="noopener noreferrer"{% endif %}
+            {% endif %}
+            title="{{ name }}">
+            
+            <span itemprop="name">
+             {% if treeItem.category.translated.customFields %}
+                {% set iconId = treeItem.category.translated.customFields.menu_icon  %}
+                 {% if iconId %}
+                    {% set mediaCollection = searchMedia([iconId], context.context) %}
+                    {% set iconMedia = mediaCollection.get(iconId) %}
+                    {% set iconUrl = iconMedia.url %}
+                    <img src="{{iconUrl}}">
+                {% endif %}
+             {% endif %}
+            {{ name }}</span>
+        </a>
+    {% endif %}
+{% endblock %}
+
+                   
