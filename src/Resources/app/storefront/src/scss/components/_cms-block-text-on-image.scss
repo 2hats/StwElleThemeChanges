@@ -1,0 +1,63 @@
+.cms-page>.cms-sections>.cms-section:first-child {
+    .cms-block-text-on-image {
+        position: relative;
+        margin-top: rem(-130);
+        min-height: rem(740);
+
+        .cms-block-container {
+            position: absolute;
+            bottom: 0;
+
+            &-row {
+                margin: 0 !important;
+                padding: 0 !important;
+
+                &>[class*='col-'] {
+                    padding: 0 !important;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+
+        }
+
+        .cms-element-text {
+            min-height: 0;
+            padding: rem(40);
+            @include tablet-lg {
+                padding: rem(30);
+            }
+            @include mobile-lg {
+                padding: rem(20) rem(16);
+            }
+
+            h1,
+            .h1 {
+                font-size: rem(48);
+                line-height: rem(58);
+                letter-spacing: 0;
+
+                @include desktop-md {
+                    font-size: rem(38);
+                    line-height: rem(48);
+                }
+
+                @include desktop-sm {
+                    font-size: rem(34);
+                    line-height: rem(44);
+                }
+
+                @include tablet-lg {
+                    font-size: rem(30);
+                    line-height: rem(38);
+                }
+
+                @include tablet-md {
+                    font-size: rem(26);
+                    line-height: rem(34);
+                }
+            }
+
+            @extend .inner-container;
+        }
+    }
+}

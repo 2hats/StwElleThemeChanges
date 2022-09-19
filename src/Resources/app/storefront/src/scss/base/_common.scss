@@ -5,3 +5,35 @@
         color: $primary-color;
     }
 }
+
+.hover-underline{
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+.inner-container{
+    max-width: rem(1180);
+    margin: auto;
+
+    @include tablet-lg() {
+        max-width: rem(914);
+    }
+
+    @include tablet-md() {
+        max-width: rem(840);
+    }
+
+    @include tablet-sm() {
+        max-width: rem(780);
+    }
+
+    @include mobile-lg() {
+        margin: auto;
+        max-width: rem(650);
+        padding-left: rem(20);
+        padding-right: rem(20);
+    }
+}

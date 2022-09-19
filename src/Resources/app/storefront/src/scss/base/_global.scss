@@ -23,9 +23,7 @@ body {
     scroll-padding-top: 12rem;
 }
 
-h1,
 h2,
-.h1,
 .h2,
 h3,
 h4,
@@ -39,38 +37,14 @@ h6,
     color: inherit;
 }
 
+h1,
+h1
+ {
+    font-family:  $font-light;
+    font-weight: 300;
+    color: inherit;
+}
 
-// h1,
-// .h1 {
-//     font-size: rem(48);
-//     line-height: rem(58);
-//     letter-spacing: 0;
-
-//     @include desktop-md {
-//         font-size: rem(38);
-//         line-height: rem(48);
-//     }
-
-//     @include desktop-sm {
-//         font-size: rem(34);
-//         line-height: rem(44);
-//     }
-
-//     @include tablet-lg {
-//         font-size: rem(30);
-//         line-height: rem(38);
-//     }
-
-//     @include tablet-md {
-//         font-size: rem(26);
-//         line-height: rem(34);
-//     }
-
-//     @include mobile-lg() {
-//         font-size: rem(24);
-//         line-height: rem(30);
-//     }
-// }
 
 
 // .textBig {
@@ -232,7 +206,7 @@ button {
 }
 
 .cms-sections {
-    overflow-x: hidden;
+    overflow-x: visible;
     overflow-y: visible;
 
     .cms-section,
