@@ -3,6 +3,25 @@
         padding: rem(100) 0  rem(60) !important;
         .elle-custom-navigation-flyout-categories{
             .navigation-flyout{
+                        &-categories{
+                            &.is-level-1{
+                                .navigation-flyout{
+                                    &-col{
+                                        margin-bottom: rem(10) !important; 
+                                        &:first-child{
+                                            margin-top: rem(10) !important;
+                                        }
+                                    }
+
+                                }
+                    
+                            }
+
+                        }
+                    }
+                       
+
+            .navigation-flyout{
                 &-col{
                     margin-bottom: rem(25) !important;
                     .elle-category-icon{
@@ -22,6 +41,8 @@
                     }
                     .navigation-flyout-link{
                         color: $secondary-color !important;
+                        font-family: $font-light;
+                        font-weight: 300;
                         &:hover{
                             padding-left: 0;
                             color: $primary-color !important;
@@ -43,16 +64,13 @@
             display: flex;
             align-items: center;
             padding-bottom: rem(40);
-            &:hover,
-            &:focus {
-                .icon{
-                    color: $primary-color;
-                }
-            }
+            font-family: $font-light;
+            font-weight: 300;
             .icon{
                 width: rem(26);
                 height: rem(23);
                 margin-right: rem(14);
+                color: $primary-color;
                & > svg{
                 top: 0;
                }

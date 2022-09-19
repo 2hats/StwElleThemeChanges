@@ -1,0 +1,16 @@
+.account-menu-offcanvas{
+    .footer-menu{
+        .footer-column-content-inner{
+            padding-bottom: 0;
+            ul{
+                margin-bottom: rem(5);
+                a{
+                    &:hover,
+                    :focus{
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}

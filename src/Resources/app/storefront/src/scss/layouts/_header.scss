@@ -12,6 +12,12 @@
 
             .nav-main {
                 position: relative;
+                .main-navigation-link{
+                    &.active{
+                        color: $primary-color;
+                    }
+
+                }
             }
 
             .navigation-flyout {
@@ -26,8 +32,13 @@
                 .footer-column-content-inner{
                     margin: 0;
                     padding: 0;
+                    margin-top: rem(5);
+                        &:first-child{
+                            margin-top: 0;
+                        }
                     ul{
                         margin:0;
+                        
                         a{
                             font-size: rem(18);
                             line-height: 1.4;
@@ -132,9 +143,13 @@
             padding-left: rem(18) !important;
             padding-right: rem(18) !important;
             height: rem(40);
+            @include tablet-lg(){
+                padding-left: rem(15) !important;
+                padding-right: rem(15) !important; 
+            }
             .icon{
-                width: rem(20);
-                height:rem(20);
+                width: rem(24);
+                height:rem(24);
             }
 
             &::after {
@@ -148,11 +163,17 @@
             }
 
             .btn {
+                padding-left:0 !important;
+                padding-right: 0 !important; 
 
                 line-height: 1;
 
                 [class*='icon-'] {
                     color: black;
+                    &:hover,
+                    &:active{
+                        color: $primary-color;
+                    }
 
                     &>svg {
                         top: 0 !important;
@@ -165,10 +186,16 @@
             }
 
             &:last-child {
-                padding-right: 0 !important;
+               
+                @include above(1200px){
+                    padding-right: 0 !important;
+                }
 
                 &::after {
-                    display: none;
+                    @include above(1200px){
+                        display: none;
+                    }
+                    
                 }
             }
         }
@@ -181,6 +208,9 @@
             padding-right: 0;
             .icon > svg {
                 top: 3px;
+            }
+            @include mobile-lg(){
+                padding-left: rem(10);
             }
         }
     }
