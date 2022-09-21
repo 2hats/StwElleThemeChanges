@@ -58,13 +58,26 @@
 			
 				<div class="custom-elle-footer__column">
 					{% block layout_footer_navigation_columns %}
-									{% for root in page.footer.navigation.tree %}
+									
 						{% block layout_footer_navigation_column %}
 
 								{% block layout_footer_navigation_information_content %}
-										<div class="footer-column-content-inner">
+										
 											{% block layout_footer_navigation_information_links %}
+												<div class="footer-column-content-inner">
 												<ul class="list-unstyled">
+												{% for root in page.footer.navigation.tree %}
+												
+												
+												{% if root.category.type == 'folder' %}
+																<li class="footer-link-item">{{ root.category.translated.name }}</li>
+															{% else %}
+																<li class="footer-link-item"><a href="{{ category_url(root.category) }}"
+																{% if category_linknewtab(root.category) %}target="_blank"{% endif %}
+																title="{{ root.category.translated.name }}">
+																	{{ root.category.translated.name }}
+																</a></li>
+															{% endif %}
 													{% for treeItem in root.children %}
 														{% set category = treeItem.category %}
 														{% set name = category.translated.name %}
@@ -73,6 +86,7 @@
 														{% set externalLink = category.translated.externalLink %}
 
 														{% block layout_footer_navigation_information_link_item %}
+															
 															<li class="footer-link-item">
 																{% block layout_footer_navigation_information_link %}
 																	{% if category.type == 'folder' %}
@@ -86,14 +100,16 @@
 															</li>
 														{% endblock %}
 													{% endfor %}
+												{% endfor %}
 												</ul>
+												</div>
 											{% endblock %}
-										</div>
+										
 									
 								{% endblock %}
 							
 						{% endblock %}
-					{% endfor %}
+					
 					{% endblock %}
 				
 				</div>
@@ -119,12 +135,17 @@
 				<div class="container">
 					{% block layout_footer_service_menu_content %}
 						{% apply spaceless %}
-						<ul class="footer-bottom-links list-unstyled">
+						{% if salesChannelCF['elle_custom_footer_bottom_text'] is defined and not salesChannelCF['elle_custom_footer_bottom_text'] is empty %}
+                            <div class="footer-snippet">
+                                    {{salesChannelCF['elle_custom_footer_bottom_text']|raw}}
+                            </div>
+                        {% endif %}
+						{# <ul class="footer-bottom-links list-unstyled">
 						<li class="footer-bottom-links-item">Stadtwerke Hersbruck</li><span class="footer-bottom-links-divider">|</span>
 						<li class="footer-bottom-links-item"> Unterer Markt 1</li><span class="footer-bottom-links-divider">|</span>
 						<li class="footer-bottom-links-item">91217 Hersbruck</li><span class="footer-bottom-links-divider">|</span>
-						<li class="footer-bottom-links-item"> <a class="footer-bottom-links-item-link" href="mailto:info@stadtwerke-hersbruck.de" target="_blank">info@stadtwerke-hersbruck.de</a></li><span class="footer-bottom-links-divider">|</span>
-							{% for serviceMenuItem in page.header.serviceMenu %}
+						<li class="footer-bottom-links-item"> <a class="footer-bottom-links-item-link" href="mailto:info@stadtwerke-hersbruck.de" target="_blank">info@stadtwerke-hersbruck.de</a></li><span class="footer-bottom-links-divider">|</span> #}
+							{# {% for serviceMenuItem in page.header.serviceMenu %}
 								{% block layout_footer_service_menu_item %}
 									<li class="ooter-bottom-links-item">
 										<a class="ffooter-bottom-links-item-link" href="{{ category_url(serviceMenuItem) }}" {% if category_linknewtab(serviceMenuItem) %} target="_blank" {% endif %} title="{{ serviceMenuItem.translated.name }}">
@@ -132,8 +153,8 @@
 										</a>
 									</li><span class="footer-bottom-links-divider">|</span>
 								{% endblock %}
-							{% endfor %}
-						</ul>
+							{% endfor %} #}
+						{# </ul> #}
 						{% endapply %}
 					{% endblock %}
 				</div>

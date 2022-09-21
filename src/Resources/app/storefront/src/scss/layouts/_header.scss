@@ -1,11 +1,16 @@
-.elle-custom-header {
+.elle-custom-theme-plugin {
+    .elle-custom-header-wrapper{
+        box-shadow: $theme-shadow;
+        position: relative;
+        z-index: 1;
+    }
     .header {
         &-main {
             width: 100%;
             height: rem(100);
             z-index: 10;
             background-color: $light-grey-color;
-            box-shadow: $theme-shadow;
+           
             @include tablet-lg(){
                 height: auto;
             }

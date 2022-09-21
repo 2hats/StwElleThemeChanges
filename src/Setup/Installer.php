@@ -99,7 +99,7 @@ class Installer
                         'type' => 'html',
                         'config' => [
                             'label' => [
-                                'en-GB' => 'footer snippet one',
+                                'en-GB' => 'Footer snippet one',
                                 'de-DE' => 'Fußzeilenausschnitt eins',
                             ],
                             'componentName' => 'sw-text-editor',
@@ -113,7 +113,7 @@ class Installer
                         'type' => 'html',
                         'config' => [
                             'label' => [
-                                'en-GB' => 'footer snippet two',
+                                'en-GB' => 'Footer snippet two',
                                 'de-DE' => 'Fußzeilenausschnitt zwei',
                             ],
                             'componentName' => 'sw-text-editor',
@@ -127,12 +127,26 @@ class Installer
                         'type' => 'html',
                         'config' => [
                             'label' => [
-                                'en-GB' => 'footer snippet three',
+                                'en-GB' => 'Footer snippet three',
                                 'de-DE' => 'Fußzeilenausschnitt drei',
                             ],
                             'componentName' => 'sw-text-editor',
                             'customFieldType' => 'textEditor',
                             'customFieldPosition' => 3,
+                        ],
+                    ],
+                    [
+                        'id' => Uuid::randomHex(),
+                        'name' => 'elle_custom_footer_bottom_text',
+                        'type' => 'html',
+                        'config' => [
+                            'label' => [
+                                'en-GB' => 'Footer bottom text',
+                                'de-DE' => 'Fußzeile unterer Text',
+                            ],
+                            'componentName' => 'sw-text-editor',
+                            'customFieldType' => 'textEditor',
+                            'customFieldPosition' => 4,
                         ],
                     ],
 

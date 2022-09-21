@@ -1,9 +1,9 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
-{% block base_header %}
-    <header class="header-main elle-custom-header">
+{% block base_body_inner %}
+    <div class="elle-custom-theme-plugin">
         {{ parent() }}
-    </header>
+    </div>
 {% endblock %}
 
 {% block base_navigation %}

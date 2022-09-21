@@ -3,6 +3,15 @@
         position: relative;
         margin-top: rem(-130);
         min-height: rem(740);
+        @include tablet-lg(){
+            margin-top: rem(-110);
+        }
+        @include tablet-md(){
+            min-height: rem(640);
+        }
+        @include mobile-md(){
+            min-height: rem(500);
+        }
 
         .cms-block-container {
             position: absolute;
@@ -32,6 +41,8 @@
 
             h1,
             .h1 {
+                font-family: $font-regular;
+                font-weight: normal;
                 font-size: rem(48);
                 line-height: rem(58);
                 letter-spacing: 0;

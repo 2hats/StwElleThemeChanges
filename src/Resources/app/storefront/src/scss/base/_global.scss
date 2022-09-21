@@ -23,6 +23,8 @@ body {
     scroll-padding-top: 12rem;
 }
 
+h1,
+h1
 h2,
 .h2,
 h3,
@@ -34,14 +36,6 @@ h6,
 .h5,
 .h6 {
     font-family:  $font-bold;
-    color: inherit;
-}
-
-h1,
-h1
- {
-    font-family:  $font-light;
-    font-weight: 300;
     color: inherit;
 }
 
