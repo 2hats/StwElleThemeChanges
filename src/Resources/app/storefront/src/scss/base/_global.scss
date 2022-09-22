@@ -76,11 +76,11 @@ h6,
     padding-left: 0;
     padding-right: 0;
 
-    max-width: rem(1180);
+    max-width: rem(1220);
     margin: auto;
 
     @include tablet-lg() {
-        max-width: rem(914);
+        max-width: rem(920);
     }
 
     @include tablet-md() {
