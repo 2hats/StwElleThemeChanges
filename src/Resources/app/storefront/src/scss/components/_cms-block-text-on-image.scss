@@ -12,6 +12,11 @@
         @include mobile-md(){
             min-height: rem(500);
         }
+        .cms-block-background{
+            &.media-mode--cover{
+                object-position: bottom;
+            }
+        }
 
         .cms-block-container {
             position: absolute;
