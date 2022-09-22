@@ -170,7 +170,14 @@ h6,
 .breadcrumb.cms-breadcrumb{
     justify-content: flex-end !important;
 }
-
+.container-main{
+    @include tablet-lg(){
+        min-height: calc(100vh - 350px);
+    }
+    @include mobile-md(){
+        min-height: rem(200);
+    }
+}
 // .icon {
 //     &>svg {
 //         top: rem(1.5);
