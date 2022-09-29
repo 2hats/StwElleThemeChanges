@@ -51,6 +51,7 @@
                 font-size: rem(48);
                 line-height: rem(58);
                 letter-spacing: 0;
+                margin-bottom: 0;
 
                 @include desktop-md {
                     font-size: rem(38);

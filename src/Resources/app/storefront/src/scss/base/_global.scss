@@ -23,8 +23,10 @@ body {
     scroll-padding-top: 12rem;
 }
 
+
+
 h1,
-h1
+.h1,
 h2,
 .h2,
 h3,
@@ -39,38 +41,27 @@ h6,
     color: inherit;
 }
 
-
-
-// .textBig {
-//     font-size: rem(28);
-//     line-height: rem(38);
-
-
-//     @include mobile-lg() {
-//         font-size: rem(24);
-//         line-height: rem(34);
-
-//     }
-// }
-
-// p {
-//     font-size: rem(18);
-//     line-height: rem(28);
-//     color: $text-color;
-//     max-width: rem(1094);
-
-//     @include mobile-lg() {
-//         font-size: rem(16);
-//         line-height: rem(26);
-//     }
-// }
+h2, .h2{
+    &::before{
+        content: "\e901";
+        position: relative;
+        font-family: 'icomoon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        color: $primary-color;
+        padding-right: 0.5em;
+    }
+}
 
 .container,
 .cms-block-nfx-custom-buttons .cms-block-container,
 .cms-block-nfx-products-list .cms-block-container,
 .cms-block-nfx-product-slider .cms-block-container,
 .cms-section .boxed {
-    // max-width: rem(1479);
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -167,6 +158,7 @@ h6,
     }
 }
 
+
 .breadcrumb.cms-breadcrumb{
     justify-content: flex-end !important;
 }
@@ -178,16 +170,6 @@ h6,
         min-height: rem(200);
     }
 }
-// .icon {
-//     &>svg {
-//         top: rem(1.5);
-//     }
-
-//     &.icon-xs {
-//         height: rem(10);
-//         width: rem(10);
-//     }
-// }
 
 a,
 .btn,
@@ -233,156 +215,5 @@ button {
     margin: auto;
 }
 
-.cms-element-title,
-.cms-element-text {
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-bottom: 0;
-    }
-
-    a,
-    button {
-        margin-top: rem(20);
-    }
-
-    a+a,
-    button+button {
-        margin-left: rem(10);
-    }
-}
 
 
-// :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, ul, ol)+p {
-//     margin-top: rem(20);
-
-//     @include desktop-md() {
-//         margin-top: rem(18);
-//     }
-
-//     @include desktop-sm() {
-//         margin-top: rem(16);
-//     }
-
-//     @include tablet-lg() {
-//         margin-top: rem(14);
-//     }
-
-//     @include tablet-md() {
-//         margin-top: rem(10);
-//     }
-// }
-
-// :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, a, button)+div,
-// :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6)+ul,
-// :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6)+li {
-//     margin-top: rem(20);
-
-//     @include desktop-md() {
-//         margin-top: rem(18);
-//     }
-
-//     @include desktop-sm() {
-//         margin-top: rem(16);
-//     }
-
-//     @include tablet-lg() {
-//         margin-top: rem(14);
-//     }
-
-//     @include tablet-md() {
-//         margin-top: rem(10);
-//     }
-// }
-
-// p+ :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6),
-// ul+ :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6),
-// ol+ :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6),
-// div+ :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
-//     margin-top: rem(50);
-
-//     @include desktop-md() {
-//         margin-top: rem(45);
-//     }
-
-//     @include desktop-sm() {
-//         margin-top: rem(40);
-//     }
-
-//     @include tablet-lg() {
-//         margin-top: rem(35);
-//     }
-
-//     @include tablet-md() {
-//         margin-top: rem(30);
-//     }
-
-//     @include mobile-lg() {
-//         margin-top: rem(40);
-//     }
-
-// }
-
-
-ol,
-ul {
-    padding-left: 1.2em;
-}
-
-ol+ol {
-    margin-top: rem(10);
-
-    @include desktop-sm() {
-        margin-top: rem(8);
-    }
-
-    @include tablet-md() {
-        margin-top: rem(6);
-    }
-}
-
-ul+ul {
-    margin-top: rem(10);
-
-    @include desktop-sm() {
-        margin-top: rem(8);
-    }
-
-    @include tablet-md() {
-        margin-top: rem(6);
-    }
-}
-
-p+p {
-    margin-top: rem(10);
-
-    @include desktop-sm() {
-        margin-top: rem(8);
-    }
-
-    @include tablet-md() {
-        margin-top: rem(6);
-    }
-}
-
-ul {
-    li {
-        font-size: rem(18);
-
-        @include mobile-lg() {
-            font-size: rem(16);
-        }
-    }
-
-    li+li {
-        margin-top: rem(6);
-
-        @include tablet-md() {
-            margin-top: rem(4);
-        }
-    }
-}

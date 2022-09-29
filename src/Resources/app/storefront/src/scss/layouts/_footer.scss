@@ -4,37 +4,13 @@ footer {
     background-color: $secondary-color !important;
     font-family: $font-light;
     padding: 0;
-    font-size: rem(20);
+    font-size:  1rem;
     line-height: 1.5;
-    @include tablet-lg(){
-        font-size: rem(18);
-    }
-    @include tablet-md(){
-        font-size: rem(16);
-    }
-    @include tablet-sm(){
-        font-size: rem(15);
-    }
-    @include mobile-lg(){
-        font-size: rem(16);
-    }
-    a{
-        font-size: rem(20);
 
+    a{
+        font-size: 1rem;
         @extend .hover-underline;
-        @include tablet-lg(){
-            font-size: rem(18);
-        }
-        @include tablet-md(){
-            font-size: rem(16);
-        }
-        @include tablet-sm(){
-            font-size: rem(15);
-        }
-        @include mobile-lg(){
-            font-size: rem(16);
-            line-height: 1.5;
-        }
+
     }
     p{
         margin-bottom: 0;

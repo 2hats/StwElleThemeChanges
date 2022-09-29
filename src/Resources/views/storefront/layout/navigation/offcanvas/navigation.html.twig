@@ -1,0 +1,16 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/navigation.html.twig' %}
+
+{% block utilities_offcanvas_content %}
+    {% block layout_navigation_offcanvas_navigation_actions %}
+        <div class="elle-custom-offcanvas-logo">
+           {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+        </div>
+    {% endblock %}
+
+    {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/categories.html.twig' with { navigation: navigation } %}
+{% endblock %}
+
+
+
+
+
