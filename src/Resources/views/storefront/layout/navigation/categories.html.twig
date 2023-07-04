@@ -7,10 +7,11 @@
             <span itemprop="name">{{ name }}</span>
         </div>
     {% else %}
-        <a class="nav-item nav-link navigation-flyout-link is-level-{{ level }}{% if id == activeId or id in activePath %} active{% endif %}"
-            href="{{ link }}"
+        <a class="nav-item nav-link navigation-flyout-link {% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %} external-link-popup {% endif %} is-level-{{ level }}{% if id == activeId or id in activePath %} active{% endif %}"
+            data-external-link-popup="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}{{ treeItem.category.externallink }}{% endif %}" data-external-link-target-blank="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}{{ treeItem.category.linkNewTab }}{% endif %}" 
+            href="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}javascript:;{% else %}{{ link }}{% endif %}"
             itemprop="url"
-            {% if category_linknewtab(treeItem.category) %}target="_blank"
+            {% if category_linknewtab(treeItem.category) && treeItem.category.customFields.ELS_status == false %}target="_blank"
                 {% if treeItem.category.linkType == "external" %}rel="noopener noreferrer"{% endif %}
             {% endif %}
             title="{{ name }}">

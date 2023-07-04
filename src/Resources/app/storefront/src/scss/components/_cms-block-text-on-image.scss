@@ -2,15 +2,15 @@
     .cms-block-text-on-image {
         position: relative;
         margin-top: rem(-130);
-        min-height: rem(740);
+        min-height: rem(550);
         @include tablet-lg(){
             margin-top: rem(-110);
         }
         @include tablet-md(){
-            min-height: rem(640);
+            min-height: rem(320);
         }
         @include mobile-md(){
-            min-height: rem(500);
+            min-height: rem(250);
         }
         .cms-block-background{
             &.media-mode--cover{
