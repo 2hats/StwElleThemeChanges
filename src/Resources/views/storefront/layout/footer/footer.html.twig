@@ -11,37 +11,6 @@
                                     {{salesChannelCF['elle_custom_footer_snippet_1']|raw}}
                             </div>
                         {% endif %}
-
-						{# {% block layout_footer_navigation_hotline_headline %}
-							<div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger" id="collapseFooterHotlineTitle" {{ dataBsTargetAttr }}="#collapseFooterHotline" aria-expanded="true" aria-controls="collapseFooterHotline" role="listitem">
-								{{ 'footer.serviceHotlineHeadline'|trans|sw_sanitize }}
-								{% block layout_footer_navigation_hotline_icons %}
-									<div class="footer-column-toggle">
-										<span class="footer-plus-icon">
-											{% sw_icon 'plus' %}
-										</span>
-										<span class="footer-minus-icon">
-											{% sw_icon 'minus' %}
-										</span>
-									</div>
-								{% endblock %}
-							</div>
-						{% endblock %} #}
-
-						{# {% block layout_footer_navigation_hotline_content %}
-							<div id="collapseFooterHotline" class="footer-column-content collapse js-footer-column-content footer-contact" aria-labelledby="collapseFooterHotlineTitle">
-								<div class="footer-column-content-inner">
-									<p class="footer-contact-hotline">
-										{{ 'footer.serviceHotline'|trans|sw_sanitize }}
-									</p>
-								</div>
-								<div class="footer-contact-form">
-									{{ 'footer.serviceContactLink'|trans({
-                                        '%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })
-                                    })|raw }}
-								</div>
-							</div>
-						{% endblock %} #}
 					</div>
 	
 
@@ -52,65 +21,67 @@
                                     {{salesChannelCF['elle_custom_footer_snippet_2']|raw}}
                             </div>
                         {% endif %}
-				
 				</div>
 
-			
 				<div class="custom-elle-footer__column">
-					{% block layout_footer_navigation_columns %}
-									
-						{% block layout_footer_navigation_column %}
+				        {% block layout_footer_navigation_columns %}
+                    {% for root in page.footer.navigation.tree %}
+                        {% block layout_footer_navigation_column %}
+                            <div class="footer-column">
+                                {% block layout_footer_navigation_information_headline %}
+                                    <div>
 
-								{% block layout_footer_navigation_information_content %}
-										
-											{% block layout_footer_navigation_information_links %}
-												<div class="footer-column-content-inner">
-												<ul class="list-unstyled">
-												{% for root in page.footer.navigation.tree %}
-												
-												
-												{% if root.category.type == 'folder' %}
-																<li class="footer-link-item">{{ root.category.translated.name }}</li>
-															{% else %}
-																<li class="footer-link-item"><a href="{{ category_url(root.category) }}"
-																{% if category_linknewtab(root.category) %}target="_blank"{% endif %}
-																title="{{ root.category.translated.name }}">
-																	{{ root.category.translated.name }}
-																</a></li>
-															{% endif %}
-													{% for treeItem in root.children %}
-														{% set category = treeItem.category %}
-														{% set name = category.translated.name %}
+                                        {% if root.category.type == 'folder' %}
+                                            <h4>{{ root.category.translated.name }}</h4>
+                                        {% else %}
+                                            <a href="{{ category_url(root.category) }}"
+                                               {% if category_linknewtab(root.category) %}target="_blank"{% endif %}
+                                               title="{{ root.category.translated.name }}">
+                                               <h4> {{ root.category.translated.name }}</h4>
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                {% endblock %}
 
-														{# @deprecated tag:v6.5.0 - Use "category.translated.externalLink" directly or category_url function instead. #}
-														{% set externalLink = category.translated.externalLink %}
+                                {% block layout_footer_navigation_information_content %}
+                                    <div id="collapseFooter{{ loop.index }}"
+                                         class="footer-column-content">
+                                        <div class="footer-column-content-inner">
+                                            {% block layout_footer_navigation_information_links %}
+                                                <ul class="list-unstyled">
+                                                    {% for treeItem in root.children %}
+                                                        {% set category = treeItem.category %}
+                                                        {% set name = category.translated.name %}
 
-														{% block layout_footer_navigation_information_link_item %}
-															
-															<li class="footer-link-item">
-																{% block layout_footer_navigation_information_link %}
-																	{% if category.type == 'folder' %}
-																		<div>{{ name }} test </div>
-																	{% else %}
-																		<a class="footer-link" href="{{ category_url(category) }}" {% if category_linknewtab(category) %} target="_blank" {% endif %} title="{{ name }}">
-																			{{ name }} 
-																		</a>
-																	{% endif %}
-																{% endblock %}
-															</li>
-														{% endblock %}
-													{% endfor %}
-												{% endfor %}
-												</ul>
-												</div>
-											{% endblock %}
-										
-									
-								{% endblock %}
-							
-						{% endblock %}
-					
-					{% endblock %}
+                                                        {# @deprecated tag:v6.5.0 - Use "category.translated.externalLink" directly or category_url function instead. #}
+                                                        {% set externalLink = category.translated.externalLink %}
+
+                                                        {% block layout_footer_navigation_information_link_item %}
+                                                            <li class="footer-link-item">
+                                                                {% block layout_footer_navigation_information_link %}
+                                                                    {% if category.type == 'folder' %}
+                                                                        <div>{{ name }}</div>
+                                                                    {% else %}
+                                                                        <a class="footer-link"
+                                                                           href="{{ category_url(category) }}"
+                                                                           {% if category_linknewtab(category) %}target="_blank"{% endif %}
+                                                                           title="{{ name }}">
+                                                                            {{ name }}
+                                                                        </a>
+                                                                    {% endif %}
+                                                                {% endblock %}
+                                                            </li>
+                                                        {% endblock %}
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endblock %}
+                                        </div>
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    {% endfor %}
+                {% endblock %}
 				
 				</div>
 
@@ -140,21 +111,6 @@
                                     {{salesChannelCF['elle_custom_footer_bottom_text']|raw}}
                             </div>
                         {% endif %}
-						{# <ul class="footer-bottom-links list-unstyled">
-						<li class="footer-bottom-links-item">Stadtwerke Hersbruck</li><span class="footer-bottom-links-divider">|</span>
-						<li class="footer-bottom-links-item"> Unterer Markt 1</li><span class="footer-bottom-links-divider">|</span>
-						<li class="footer-bottom-links-item">91217 Hersbruck</li><span class="footer-bottom-links-divider">|</span>
-						<li class="footer-bottom-links-item"> <a class="footer-bottom-links-item-link" href="mailto:info@stadtwerke-hersbruck.de" target="_blank">info@stadtwerke-hersbruck.de</a></li><span class="footer-bottom-links-divider">|</span> #}
-							{# {% for serviceMenuItem in page.header.serviceMenu %}
-								{% block layout_footer_service_menu_item %}
-									<li class="ooter-bottom-links-item">
-										<a class="ffooter-bottom-links-item-link" href="{{ category_url(serviceMenuItem) }}" {% if category_linknewtab(serviceMenuItem) %} target="_blank" {% endif %} title="{{ serviceMenuItem.translated.name }}">
-											{{ serviceMenuItem.translated.name }}
-										</a>
-									</li><span class="footer-bottom-links-divider">|</span>
-								{% endblock %}
-							{% endfor %} #}
-						{# </ul> #}
 						{% endapply %}
 					{% endblock %}
 				</div>
