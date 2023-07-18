@@ -1,36 +1,26 @@
 {% sw_extends '@Storefront/storefront/layout/navigation/categories.html.twig' %}
- 
+
 {% block layout_navigation_categories_item_link %}
-    {% if treeItem.category.type == 'folder' %}
-        <div class="nav-item nav-link navigation-flyout-link is-level-{{ level }}"
-                title="{{ name }}">
-            <span itemprop="name">{{ name }}</span>
-        </div>
-    {% else %}
-        <a class="nav-item nav-link navigation-flyout-link {% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %} external-link-popup {% endif %} is-level-{{ level }}{% if id == activeId or id in activePath %} active{% endif %}"
-            data-external-link-popup="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}{{ treeItem.category.externallink }}{% endif %}" data-external-link-target-blank="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}{{ treeItem.category.linkNewTab }}{% endif %}" 
-            href="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}javascript:;{% else %}{{ link }}{% endif %}"
-            itemprop="url"
-            {% if category_linknewtab(treeItem.category) && treeItem.category.customFields.ELS_status == false %}target="_blank"
-                {% if treeItem.category.linkType == "external" %}rel="noopener noreferrer"{% endif %}
-            {% endif %}
-            title="{{ name }}">
-            
-            <span itemprop="name">
-             {% if treeItem.category.translated.customFields %}
-                {% set iconId = treeItem.category.translated.customFields.menu_icon  %}
-                 {% if iconId %}
-                    {% set mediaCollection = searchMedia([iconId], context.context) %}
-                    {% set iconMedia = mediaCollection.get(iconId) %}
-                    {% set iconUrl = iconMedia.url %}
+	{% if treeItem.category.type == 'folder' %}
+		<div class="nav-item nav-link navigation-flyout-link is-level-{{ level }}" title="{{ name }}">
+			<span itemprop="name">{{ name }}</span>
+		</div>
+	{% else %}
+		<a class="nav-item nav-link navigation-flyout-link {% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %} external-link-popup {% endif %} is-level-{{ level }}{% if id == activeId or id in activePath %} active{% endif %}" data-external-link-popup="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}{{ treeItem.category.externallink }}{% endif %}" data-external-link-target-blank="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}{{ treeItem.category.linkNewTab }}{% endif %}" href="{% if treeItem.category.linkType == 'external' && treeItem.category.customFields.ELS_status %}javascript:;{% else %}{{ link }}{% endif %}" itemprop="url" {% if category_linknewtab(treeItem.category) && treeItem.category.customFields.ELS_status == false %} target="_blank" {% if treeItem.category.linkType == "external" %} rel="noopener noreferrer" {% endif %} {% endif %} title="{{ name }}">
 
-                    <img class="elle-category-icon" style="-webkit-mask-image: url('{{iconUrl}}');
-  mask-image: url('{{iconUrl}}');">
-                {% endif %}
-             {% endif %}
-            {{ name }}</span>
-        </a>
-    {% endif %}
+			<span itemprop="name">
+				{% if treeItem.category.translated.customFields %}
+					{% set iconId = treeItem.category.translated.customFields.menu_icon  %}
+					{% if iconId %}
+						{% set mediaCollection = searchMedia([iconId], context.context) %}
+						{% set iconMedia = mediaCollection.get(iconId) %}
+						{% set iconUrl = iconMedia.url %}
+
+						<img class="elle-category-icon" style="-webkit-mask-image: url('{{iconUrl}}');
+						  mask-image: url('{{iconUrl}}');">
+					{% endif %}
+				{% endif %}
+				{{ name }}</span>
+		</a>
+	{% endif %}
 {% endblock %}
-
-                   
