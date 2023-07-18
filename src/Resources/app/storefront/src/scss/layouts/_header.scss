@@ -198,6 +198,19 @@
                     
                 }
             }
+            .icon > svg path, 
+            .icon > svg use{
+                fill: none;
+            }
+            .btn{
+                &:hover,
+                &:focus{
+                    .icon > svg path, 
+                    .icon > svg use{
+                        stroke: $primary-color;
+                    }
+                }
+            }
         }
     }
 
