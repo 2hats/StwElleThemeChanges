@@ -91,17 +91,9 @@ footer {
         }
         .footer-link-item{
             line-height: 1;
-            &:nth-child(3){
-                margin-bottom: rem(30);
-                @include mobile-lg(){
-                    margin-bottom: rem(20);
-                }
-                @include mobile-sm(){
-                    margin-bottom: rem(15);
-                }
-            }
+            padding: rem(3) 0;
             @include mobile-lg(){
-                padding: 0 rem(8);
+                padding: rem(4) 0;
             }
             a{
                @extend .hover-underline;
