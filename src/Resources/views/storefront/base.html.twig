@@ -1,9 +1,13 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
 {% block base_body_inner %}
-    <div class="elle-custom-theme-plugin">
-        {{ parent() }}
-    </div>
+{% set customBreadscrub = page.header.navigation.active.customFields.breadscrub %}
+{% if customBreadscrub %}
+{% set customBreadscrubValue = customBreadscrub %}
+{% endif %}
+<div class="elle-custom-theme-plugin{% if customBreadscrubValue == 'breadcrumb_white' %} breadcrumb-white{% endif %}">
+    {{ parent() }}
+</div>
 {% endblock %}
 
 {% block base_navigation %}

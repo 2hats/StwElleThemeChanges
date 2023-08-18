@@ -50,6 +50,11 @@ class Uninstaller
         if ($this->checkValidUuid($elle_custom_menu_icons)) {
             $customFieldSetRepo->delete([['id' => $elle_custom_menu_icons]], Context::createDefaultContext());
         } 
+        $elle_custom_category_layout = $this->fetchCustomFieldSetId('elle_custom_category_layout');
+        if ($this->checkValidUuid($elle_custom_category_layout)) {
+            $customFieldSetRepo->delete([['id' => $elle_custom_category_layout]], Context::createDefaultContext());
+        } 
+
         return true;
     }
 

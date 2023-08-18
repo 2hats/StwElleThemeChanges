@@ -228,3 +228,27 @@
         }
     }
 }
+.breadcrumb-white{
+    .cms-breadcrumb{
+        position: relative;
+        z-index: 1;
+    }
+
+    .breadcrumb{
+        .breadcrumb-item{
+            a{
+                color: $white-color;
+            }
+            .breadcrumb-link{
+                &.is-active{
+                    color: $white-color;
+                }
+            }
+        }
+        .breadcrumb-placeholder{
+            span{
+                color: $white-color;
+            }
+        }
+    }
+}

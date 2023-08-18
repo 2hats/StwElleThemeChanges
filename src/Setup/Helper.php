@@ -25,9 +25,9 @@ class Helper
     {
         $this->connection = $connection;
     }
- 
-  
- 
+
+
+
     public function prepareElleCategoryCustomMenuIcons()
     {
         $id = Uuid::randomHex();
@@ -63,5 +63,60 @@ class Helper
             ],
         ];
         return $attributeSet;
-    }  
+    }
+
+    public function prepareElleCategoryCustomStyles()
+    {
+        $id = Uuid::randomHex();
+        $attributeSet = [
+            'id' => $id,
+            'name' => 'elle_custom_category_layout',
+            'config' => [
+                'label' => [
+                    'en-GB' => 'Layout Settings',
+                    'de-DE' => 'Layouteinstellungen',
+                ]
+            ],
+            'customFields' => [
+                [
+                    'id' => Uuid::randomHex(),
+                    'name' => 'breadscrub',
+                    'type' => 'select',
+                    
+                    'config' => [
+                        'label' => [
+                            'en-GB' => 'Breadcrumb Style',
+                            'de-DE' => 'Breadcrumb-Layout',
+                        ],
+                        'options' => [
+                            [
+                                'label' => [
+                                    'en-GB' => 'Default',
+                                    'de-DE' => 'Standard',
+                                ],
+                                'value' => 'breadcrumb_default',
+                            ],
+                            [
+                                'label' => [
+                                    'en-GB' => 'White Style',
+                                    'de-DE' => 'Weißer Stil',
+                                ],
+                                'value' => 'breadcrumb_white',
+                            ],
+                            
+                        ],
+                        'componentName' => 'sw-single-select',
+                        'customFieldType' => 'media',
+                        'customFieldPosition' => 1,
+                    ],
+                ],
+            ],
+            'relations' => [
+                [
+                    'entityName' => 'category',
+                ],
+            ],
+        ];
+        return $attributeSet;
+    }
 }

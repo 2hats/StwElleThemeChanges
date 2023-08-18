@@ -59,6 +59,13 @@ class Installer
             $repo->create([$attributeSet], Context::createDefaultContext());
         }
 
+        $elleCustomcategoryLayout = $this->fetchCustomFieldSetId('elle_custom_category_layout');
+        if (!$elleCustomcategoryLayout) {
+            $repo = $this->container->get('custom_field_set.repository');
+            $attributeSet = $this->helper->prepareElleCategoryCustomStyles();
+            $repo->create([$attributeSet], Context::createDefaultContext());
+        }
+
         return false;
 
         

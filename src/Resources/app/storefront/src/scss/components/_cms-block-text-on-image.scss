@@ -78,3 +78,9 @@
         }
     }
 }
+
+.cms-block{
+    &.cms-block-text-on-image{
+        max-width: 100%;
+    }
+}
