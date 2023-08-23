@@ -17,6 +17,7 @@
 
             .nav-main {
                 position: relative;
+                width: auto;
                 .main-navigation-link{
                     &.active{
                         color: $primary-color;
@@ -135,6 +136,9 @@
                 display: none;
             }
         }
+        &-actions-col{
+            width: auto;
+        }
 
         &-actions-item {
             position: relative;
@@ -251,4 +255,7 @@
             }
         }
     }
+}
+.header-logo-picture {
+    text-align: center;
 }
