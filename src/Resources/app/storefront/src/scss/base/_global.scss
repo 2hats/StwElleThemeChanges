@@ -132,6 +132,7 @@ h2, .h2{
     }
 
     .cms-block-container-row {
+        padding: 0;
         .container {
             width: 100%;
 
@@ -161,6 +162,11 @@ h2, .h2{
 
 .breadcrumb.cms-breadcrumb{
     justify-content: flex-end !important;
+}
+.cms-breadcrumb{
+    ol.breadcrumb{
+        justify-content: flex-end !important;
+    }
 }
 .container-main{
     @include tablet-lg(){
