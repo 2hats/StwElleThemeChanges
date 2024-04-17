@@ -2,7 +2,7 @@
   "name": "stw/stw-elle-theme-changes",
   "description": "Stw Elle Theme Changes",
   "type": "shopware-platform-plugin",
-  "version":"1.0.0",
+  "version":"1.1.0",
   "license":"proprietary",
   "prefer-stable": true,
   "minimum-stability": "stable",
