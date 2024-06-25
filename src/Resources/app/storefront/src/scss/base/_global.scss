@@ -1,67 +1,67 @@
 html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html,
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: $font-regular, $fallback-fonts;
-    font-size: 16px;
-    min-height: 100%;
-    color: $text-color;
-    scroll-padding-top: 12rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-regular, $fallback-fonts;
+  font-size: 16px;
+  min-height: 100%;
+  color: $text-color;
+  scroll-padding-top: 12rem;
 }
 
-
-
-h1,
-.h1,
-h2,
-.h2,
-h3,
-h4,
-.h3,
-.h4,
-h5,
-h6,
-.h5,
-.h6 {
-    font-family:  $font-regular;
+.elle-custom-theme-plugin {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  h4,
+  .h3,
+  .h4,
+  h5,
+  h6,
+  .h5,
+  .h6 {
+    font-family: $font-regular;
     color: inherit;
-}
+  }
 
-h2, .h2{
-    &::before{
-        content: "\e901";
-        position: relative;
-        font-family: 'icomoon' !important;
-        speak: never;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        color: $primary-color;
-        padding-right: 0.5em;
+  h2,
+  .h2 {
+    &::before {
+      content: "\e901";
+      position: relative;
+      font-family: "icomoon" !important;
+      speak: never;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      color: $primary-color;
+      padding-right: 0.5em;
     }
-}
+  }
 
-.container,
-.cms-block-nfx-custom-buttons .cms-block-container,
-.cms-block-nfx-products-list .cms-block-container,
-.cms-block-nfx-product-slider .cms-block-container,
-.cms-section .boxed {
+  .container,
+  .cms-block-nfx-custom-buttons .cms-block-container,
+  .cms-block-nfx-products-list .cms-block-container,
+  .cms-block-nfx-product-slider .cms-block-container,
+  .cms-section .boxed {
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -71,155 +71,150 @@ h2, .h2{
     margin: auto;
 
     @include tablet-lg() {
-        max-width: rem(920);
+      max-width: rem(920);
     }
 
     @include tablet-md() {
-        max-width: rem(840);
+      max-width: rem(840);
     }
 
     @include tablet-sm() {
-        max-width: rem(780);
+      max-width: rem(780);
     }
 
     @include mobile-lg() {
-        margin: auto;
-        max-width: rem(650);
-        padding-left: rem(20);
-        padding-right: rem(20);
+      margin: auto;
+      max-width: rem(650);
+      padding-left: rem(20);
+      padding-right: rem(20);
     }
 
     &.limited {
-        max-width: rem(1280);
+      max-width: rem(1280);
 
-        @include desktop-md() {
-            max-width: rem(1150);
-        }
+      @include desktop-md() {
+        max-width: rem(1150);
+      }
 
-        @include tablet-lg {
-            max-width: rem(860);
-        }
+      @include tablet-lg {
+        max-width: rem(860);
+      }
     }
 
     &.wide {
-        max-width: rem(1479);
+      max-width: rem(1479);
 
-        @include desktop-md() {
-            max-width: rem(1239);
-        }
+      @include desktop-md() {
+        max-width: rem(1239);
+      }
 
-        @include desktop-sm() {
-            max-width: rem(1114);
-        }
+      @include desktop-sm() {
+        max-width: rem(1114);
+      }
 
-        @include tablet-lg() {
-            max-width: rem(932);
-        }
+      @include tablet-lg() {
+        max-width: rem(932);
+      }
 
-        @include tablet-md() {
-            max-width: rem(767);
-        }
+      @include tablet-md() {
+        max-width: rem(767);
+      }
 
-        @include tablet-sm() {
-            max-width: rem(680);
-            margin: auto;
-        }
+      @include tablet-sm() {
+        max-width: rem(680);
+        margin: auto;
+      }
 
-        @include mobile-lg() {
-            padding: 0 rem(20);
-        }
-
+      @include mobile-lg() {
+        padding: 0 rem(20);
+      }
     }
 
     .cms-block-container-row {
-        padding: 0;
-        .container {
-            width: 100%;
+      padding: 0;
+      .container {
+        width: 100%;
 
-            @include desktop-md() {
-                max-width: 100%;
-            }
-
-            @include desktop-sm() {
-                max-width: 100%;
-            }
-
-            @include tablet-lg() {
-                max-width: 100%;
-            }
-
-            @include tablet-md() {
-                max-width: 100%;
-            }
-
-            @include tablet-sm() {
-                max-width: 100%;
-            }
+        @include desktop-md() {
+          max-width: 100%;
         }
+
+        @include desktop-sm() {
+          max-width: 100%;
+        }
+
+        @include tablet-lg() {
+          max-width: 100%;
+        }
+
+        @include tablet-md() {
+          max-width: 100%;
+        }
+
+        @include tablet-sm() {
+          max-width: 100%;
+        }
+      }
     }
-}
+  }
 
-
-.breadcrumb.cms-breadcrumb{
+  .breadcrumb.cms-breadcrumb {
     justify-content: flex-end !important;
-}
-.cms-breadcrumb{
-    ol.breadcrumb{
-        justify-content: flex-end !important;
+  }
+  .cms-breadcrumb {
+    ol.breadcrumb {
+      justify-content: flex-end !important;
     }
-}
-.container-main{
-    @include tablet-lg(){
-        min-height: calc(100vh - 350px);
+  }
+  .container-main {
+    @include tablet-lg() {
+      min-height: calc(100vh - 350px);
     }
-    @include mobile-md(){
-        min-height: rem(200);
+    @include mobile-md() {
+      min-height: rem(200);
     }
-}
+  }
 
-a,
-.btn,
-.icon,
-.sp-icon {
+  a,
+  .btn,
+  .icon,
+  .sp-icon {
     transition: 0.3s all;
     @extend .theme-hover;
-}
+  }
 
-button {
+  button {
     outline: none;
     box-shadow: none;
 
     &:hover,
     &:active,
     &:focus {
-        outline: none;
-        box-shadow: none;
+      outline: none;
+      box-shadow: none;
     }
-}
+  }
 
-.cms-sections {
+  .cms-sections {
     overflow-x: visible;
     overflow-y: visible;
 
     .cms-section,
     .cms-block {
-        overflow: visible;
+      overflow: visible;
     }
+  }
 
-}
-
-.btn .icon>svg {
+  .btn .icon > svg {
     top: 0;
-}
+  }
 
-.flashbags.container {
+  .flashbags.container {
     margin-top: 15px;
-}
+  }
 
-.cms-block {
+  .cms-block {
     max-width: 1920px;
     margin: auto;
+  }
 }
-
-
-

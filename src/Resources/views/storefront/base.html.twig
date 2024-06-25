@@ -1,12 +1,39 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
 {% block base_body_inner %}
-{% set customBreadscrub = page.header.navigation.active.customFields.breadscrub %}
-{% if customBreadscrub %}
-{% set customBreadscrubValue = customBreadscrub %}
-{% endif %}
-<div class="elle-custom-theme-plugin{% if customBreadscrubValue == 'breadcrumb_white' %} breadcrumb-white{% endif %}">
-    {{ parent() }}
-</div>
+	{% set customBreadscrub = page.header.navigation.active.customFields.breadscrub %}
+	{% if customBreadscrub %}
+		{% set customBreadscrubValue = customBreadscrub %}
+	{% endif %}
+
+
+	{% if config('StwElleThemeChanges.config.enable') %}
+
+		<div class="elle-custom-theme-plugin{% if customBreadscrubValue == 'breadcrumb_white' %} breadcrumb-white{% endif %}">
+			{{ parent() }}
+		</div>
+		{% block base_navigation %}
+			{% if config('StwElleThemeChanges.config.enable') %}
+				{% else %}
+					{{ parent() }}
+			{% endif %}
+
+		{% endblock %}
+	{% else %}
+		{{ parent() }}
+	{% endif %}
+
 {% endblock %}
-{% block base_navigation %}{% endblock %}
+
+
+{% block base_header_inner %}
+
+	{% if config('StwElleThemeChanges.config.enable') %}
+		<div data-flyout-menu="true">
+			{% sw_include '@Storefront/storefront/layout/header/elle-header.html.twig' %}
+			{% sw_include '@Storefront/storefront/layout/navigation/flyouts.html.twig' %}
+		</div>
+	{% else %}
+		{{ parent() }}
+	{% endif %}
+{% endblock %}

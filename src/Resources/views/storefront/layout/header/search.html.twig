@@ -1,6 +1,8 @@
 {% sw_extends '@SwagElleTheme/storefront/layout/header/search.html.twig' %}
 
+
 {% block layout_header_search %}
+	{% if config('StwElleThemeChanges.config.enable') %}
     <div class="collapse"
          id="searchCollapse">
         <div class="header-search">
@@ -52,4 +54,10 @@
             </form>
         </div>
     </div>
+    	{% else %}
+		{{ parent() }}
+	{% endif %}
 {% endblock %}
+
+
+

@@ -6,9 +6,13 @@
         <title>Basic Configuration</title>
         <title lang="de-DE">Grundeinstellungen</title>
 
-        <component name="sw-text-editor">
-    <name>textEditor</name>
-    <label>Write some nice text with WYSIWYG editor</label>
-</component>
+        <input-field type="bool">
+            <name>enable</name>
+            <label lang="de-DE">Enable Plugin functionalities</label>
+            <label>Enable Plugin functionalities</label>
+            <defaultValue>false</defaultValue>
+            <helpText>This plugin is an update to elle theme.</helpText>
+            <helpText lang="de-DE">This plugin is an update to elle theme.</helpText>
+        </input-field> 
     </card>
 </config>

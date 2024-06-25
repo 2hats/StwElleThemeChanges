@@ -1,6 +1,7 @@
 {% sw_extends '@Storefront/storefront/layout/header/account-menu.html.twig' %}
 
 {% block utilities_offcanvas_content %}
+	{% if config('StwElleThemeChanges.config.enable') %}
 	<div class="account-menu">
 		<div class="footer-menu">
 
@@ -54,4 +55,10 @@
 		</div>
 
 	</div>
+	{% else %}
+		{{ parent() }}
+	{% endif %}
+
+
+
 {% endblock %}

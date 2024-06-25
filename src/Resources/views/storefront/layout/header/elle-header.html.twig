@@ -1,6 +1,9 @@
-{% block layout_header %}
 
+{% sw_extends '@SwagElleTheme/storefront/layout/header/header.html.twig' %}
+
+{% block layout_header %}
 	{% block layout_header_navigation %}
+	{% if config('StwElleThemeChanges.config.enable') %}
 		<div class="elle-custom-header-wrapper">
 			<div class="container">
 				<div class="elle-custom-header-inner">
@@ -80,7 +83,14 @@
 				</div>
 			</div>
 		</div>
-
+		{% else %}
+		{{ parent() }}
+	{% endif %}
 	{% endblock %}
 
+
+
 {% endblock %}
+
+
+

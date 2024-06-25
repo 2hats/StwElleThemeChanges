@@ -1,6 +1,7 @@
 {% sw_extends '@Storefront/storefront/layout/navigation/flyout.html.twig' %}
 
 {% block layout_navigation_flyout %}
+	{% if config('StwElleThemeChanges.config.enable') %}
 <div class="elle-custom-flyout-inner">
 	{% set category = navigationTree.category %}
 	{% set name = category.translated.name %}
@@ -47,6 +48,12 @@
                     </div>
 	{% endblock %}
 	</div>
+	{% else %}
+		{{ parent() }}
+	{% endif %}
+
 {% endblock %}
+
+
 
 

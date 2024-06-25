@@ -1,3 +1,7 @@
+
+$elle-theme: config('StwElleThemeChanges.config.enable');
+
+@if ($elle-theme ) {
 // Utils
 @import "./util/mixins";
 @import "./util/variables";
@@ -12,9 +16,11 @@
 // Layouts
 @import "./layouts/header";
 @import "./layouts/footer";
-
 @import "./components/main-navigation";
 @import "./components/cms-block-text-on-image";
 @import "./components/elle-custom-flyout";
 @import "./components/offcanvas";
+}
+
+
 

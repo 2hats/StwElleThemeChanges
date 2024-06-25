@@ -1,10 +1,22 @@
 {% sw_extends '@Storefront/storefront/layout/navigation/navigation.html.twig' %}
 {% block layout_main_navigation_menu_home %}
+	{% if config('StwElleThemeChanges.config.enable') %}
+
+	{% else %}
+		{{ parent() }}
+	{% endif %}
  
 {% endblock %}
 
 {% block layout_main_navigation_menu_flyout_container %}
+
+	{% if config('StwElleThemeChanges.config.enable') %}
    <div class="elle-custom-flyout-inner">
         {{parent()}}
   </div>
+	{% else %}
+		{{ parent() }}
+	{% endif %}
+
+
 {% endblock %}
