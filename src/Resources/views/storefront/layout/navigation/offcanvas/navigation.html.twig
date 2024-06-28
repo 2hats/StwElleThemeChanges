@@ -4,9 +4,13 @@
 	{% if config('StwElleThemeChanges.config.enable') %}
 
     {% block layout_navigation_offcanvas_navigation_actions %}
+    {% if config('StwElleThemeChanges.config.enable') %}
         <div class="elle-custom-offcanvas-logo">
            {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
         </div>
+        {% else %}
+		{{ parent() }}
+	{% endif %}
     {% endblock %}
 
     {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/categories.html.twig' with { navigation: navigation } %}

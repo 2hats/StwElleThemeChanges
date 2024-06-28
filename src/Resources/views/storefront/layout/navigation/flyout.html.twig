@@ -6,46 +6,77 @@
 	{% set category = navigationTree.category %}
 	{% set name = category.translated.name %}
 	{% block layout_navigation_flyout_bar %}
+		{% if config('StwElleThemeChanges.config.enable') %}
 		<div class="row navigation-flyout-bar elle-custom-flyout-bar">
 			{% block layout_navigation_flyout_bar_close %}
 				{{ parent() }}
 			{% endblock %}
 		</div>
+		{% else %}
+			{{ parent() }}
+		{% endif %}
+		
 	{% endblock %}
 	{% block layout_navigation_flyout_content %}
-		 <div class="row navigation-flyout-content elle-custom-flyout-content">
+	{% if config('StwElleThemeChanges.config.enable') %}
+
+			 <div class="row navigation-flyout-content elle-custom-flyout-content">
             {% block layout_navigation_flyout_categories %}
-                <div class="col-12">
+			{% if config('StwElleThemeChanges.config.enable') %}
+			 <div class="col-12">
                     <div class="navigation-flyout-categories elle-custom-navigation-flyout-categories">
                         {% block layout_navigation_flyout_categories_recoursion %}
                            {{ parent() }}
                         {% endblock %}
                     </div>
                 </div>
+		{% else %}
+			{{ parent() }}
+		{% endif %}
+               
             {% endblock %}
 		</div>
+
+		{% else %}
+			{{ parent() }}
+		{% endif %}
+
 	{% endblock %}
 	{% block layout_navigation_flyout_bar_category %}
-		<div class="navigation-flyout-category-link elle-custom-flyout-category-link">
+	{% if config('StwElleThemeChanges.config.enable') %}
+	<div class="navigation-flyout-category-link elle-custom-flyout-category-link">
                         {% block layout_navigation_flyout_bar_category_link %}
+						{% if config('StwElleThemeChanges.config.enable') %}
                             {% if category.type == 'page' %}
                                 <a class="nav-link"
                                    href="{{ seoUrl('frontend.navigation.page', { navigationId: category.id }) }}"
                                    itemprop="url"
                                    title="{{ name }}">
                                     {% block layout_navigation_flyout_bar_category_link_text %}
+									{% if config('StwElleThemeChanges.config.enable') %}
 									  {% sw_icon 'navigate-right' style {
 											'namespace': 'StwElleThemeChanges',
 											'pack': 'solid'
                                         } %}
 
                                         {{ "general.toCategory"|trans|sw_sanitize }} {{ name }}
+										{% else %}
+									{{ parent() }}
+								{% endif %}
                                       
                                     {% endblock %}
                                 </a>
                             {% endif %}
+								{% else %}
+									{{ parent() }}
+								{% endif %}
                         {% endblock %}
                     </div>
+		{% else %}
+			{{ parent() }}
+		{% endif %}
+
+		
 	{% endblock %}
 	</div>
 	{% else %}

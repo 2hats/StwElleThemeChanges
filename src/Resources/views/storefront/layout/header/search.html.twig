@@ -22,12 +22,14 @@
                   data-url="{{ path('frontend.search.suggest') }}?search="
                   class="header-search-form">
                 {% block layout_header_search_input_group %}
+                {% if config('StwElleThemeChanges.config.enable') %}
                     <div class="input-group input-group-lg">
                         {% block layout_header_search_input %}
                             {{ parent() }}
                         {% endblock %}
 
                         {% block layout_header_search_button %}
+                         {% if config('StwElleThemeChanges.config.enable') %}
                             {% if feature('V6_5_0_0') %}
                                 <button type="submit"
                                         class="btn header-search-btn"
@@ -47,9 +49,15 @@
                                     </button>
                                 </div>
                             {% endif %}
+                             {% else %}
+                                {{ parent() }}
+                            {% endif %}
                             
                         {% endblock %}
                     </div>
+                    {% else %}
+                        {{ parent() }}
+                    {% endif %}
                 {% endblock %}
             </form>
         </div>
