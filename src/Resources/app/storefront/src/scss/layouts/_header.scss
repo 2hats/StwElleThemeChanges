@@ -119,6 +119,7 @@
             @include tablet-md(){
                 height: rem(80);
                 align-items: center;
+                margin: 0;
             }
         }
         &-search{
@@ -229,6 +230,7 @@
             }
             @include mobile-lg(){
                 padding-left: rem(10);
+                margin-right: -3px;
             }
         }
     }

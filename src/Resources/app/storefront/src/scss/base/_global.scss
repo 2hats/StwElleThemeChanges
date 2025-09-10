@@ -67,6 +67,11 @@ body {
 
   h2,
   .h2 {
+    @include mobile-lg(){
+      font-size: rem(24);
+      line-height: 1.3;
+      hyphens: auto;
+    }
     &::before {
       content: "\e901";
       position: relative;
@@ -84,6 +89,23 @@ body {
 
   p {
     font-family: $font-regular, $fallback-fonts;
+  }
+  ul{
+    color: $gray-color;
+  }
+
+  .cms-element-cmscollapse .cms-element-cmscollapse-accordion .cms-element-cmscollapse-accordion-card.is--complete-clickable .card-header .btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: $black-color;
+    @extend .theme-hover;
+  }
+
+  .cms-element-cmscollapse .cms-element-cmscollapse-accordion .cms-element-cmscollapse-accordion-card.is--complete-clickable .card-header .sw-icon{
+    flex: 1;
+    text-align: right;
   }
 
   .container,
@@ -114,8 +136,6 @@ body {
     @include mobile-lg() {
       margin: auto;
       max-width: rem(650);
-      padding-left: rem(20);
-      padding-right: rem(20);
     }
 
     &.limited {
@@ -197,6 +217,9 @@ body {
       margin: 15px 0;
       right: 0;
       justify-content: flex-end !important;
+      @include mobile-lg{
+        right: 20px;
+      }
     }
   }
   .container-main {
@@ -237,6 +260,11 @@ body {
       overflow: visible;
     }
   }
+  .cms-section{
+    @include mobile-lg(){
+      padding: 2.5rem 0;
+    }
+  }
 
   .btn .icon > svg {
     top: 0;
@@ -245,6 +273,26 @@ body {
   .flashbags.container {
     margin-top: 0;
   }
+ 
+  .modal-header .close{
+    width: 26px;
+    height: 26px;
+    z-index: 100;
+    .icon-feather>svg{
+      top: 0;
+    }
+    &:hover{
+      color: $primary-color;
+      span{
+        color: $primary-color;
+      }
+    }
+  }
+
+  .account-menu .offcanvas-close{
+    display: none;
+  }
+
 
   .cms-block {
     max-width: 1920px;
@@ -265,6 +313,7 @@ body {
       flex-wrap: wrap;
       .footer-bottom-links{
         width: auto;
+        color: $white-color;
       }
     }
   }

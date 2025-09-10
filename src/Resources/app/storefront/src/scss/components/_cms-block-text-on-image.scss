@@ -10,6 +10,7 @@
             min-height: rem(320);
         }
         @include mobile-md(){
+            margin-top: -30px;
             min-height: rem(250);
         }
         .cms-block-background{
@@ -30,6 +31,10 @@
                 &>[class*='col-'] {
                     padding: 0 !important;
                     background-color: rgba(0, 0, 0, 0.5);
+                    @include mobile-lg{
+                        margin: 0 20px;
+                        width: calc(100% - 40px);
+                    }
                 }
             }
 
