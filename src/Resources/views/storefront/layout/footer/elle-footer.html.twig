@@ -111,7 +111,7 @@
 						{% apply spaceless %}
 						{% if salesChannelCF['elle_custom_footer_bottom_text'] is defined and not salesChannelCF['elle_custom_footer_bottom_text'] is empty %}
                             <div class="footer-snippet">
-                                    {{salesChannelCF['elle_custom_footer_bottom_text']|raw}}
+                                <div class="copy-year-text">&copy; {{ "now"|date("Y") }}</div>{{salesChannelCF['elle_custom_footer_bottom_text']|raw}}
                             </div>
                         {% endif %}
 						{% endapply %}

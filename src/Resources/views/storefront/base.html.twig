@@ -1,5 +1,7 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
+{% block base_body_classes %}{% if config('StwElleThemeChanges.config.enable') %}{{ parent() }} elle-custom-theme-active{% else %}{{ parent() }}{% endif %}{% endblock %}
+
 {% block base_body_inner %}
 	{% set customBreadscrub = page.header.navigation.active.customFields.breadscrub %}
 	{% if customBreadscrub %}
@@ -66,3 +68,23 @@
 		{{ parent() }}
 	{% endif %}
 {% endblock %}
+
+    {% block base_pseudo_modal %}
+        {% if config('StwElleThemeChanges.config.enable') %}
+		<div class="elle-custom-theme-plugin">
+			{{ parent() }}
+		</div>
+	{% else %}
+		{{ parent() }}
+	{% endif %}
+    {% endblock %}
+
+    {% block base_speculation_rules %}
+        {% if config('StwElleThemeChanges.config.enable') %}
+		<div class="elle-custom-theme-plugin">
+			{{ parent() }}
+		</div>
+	{% else %}
+		{{ parent() }}
+	{% endif %}
+    {% endblock %}
