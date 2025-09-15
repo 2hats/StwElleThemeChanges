@@ -1,17 +1,16 @@
 .cms-page>.cms-sections>.cms-section:first-child {
     .cms-block-text-on-image {
         position: relative;
-        margin-top: rem(-130);
-        min-height: rem(550);
-        @include tablet-lg(){
-            margin-top: rem(-110);
-        }
-        @include tablet-md(){
-            min-height: rem(320);
-        }
+        // margin-top: rem(-130);
+        min-height: rem(420);
+        // @include tablet-lg(){
+        //     margin-top: rem(-110);
+        // }
+        // @include tablet-md(){
+        //     min-height: rem(320);
+        // }
         @include mobile-md(){
-            margin-top: -30px;
-            min-height: rem(250);
+            min-height: rem(330);
         }
         .cms-block-background{
             &.media-mode--cover{
@@ -31,9 +30,8 @@
                 &>[class*='col-'] {
                     padding: 0 !important;
                     background-color: rgba(0, 0, 0, 0.5);
-                    @include mobile-lg{
-                        margin: 0 20px;
-                        width: calc(100% - 40px);
+                    @include tablet-md{
+                        padding: 0 20px;
                     }
                 }
             }
@@ -89,4 +87,8 @@
     &.cms-block-text-on-image{
         max-width: 100%;
     }
+}
+
+.cms-section.bg-image.pos-0{
+    padding: 0;
 }
