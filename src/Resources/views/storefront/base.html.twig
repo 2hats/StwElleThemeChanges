@@ -2,6 +2,14 @@
 
 {% block base_body_classes %}{% if config('StwElleThemeChanges.config.enable') %}{{ parent() }} elle-custom-theme-active{% else %}{{ parent() }}{% endif %}{% endblock %}
 
+{% block base_head %}
+	{{ parent() }}
+	{% if config('StwElleThemeChanges.config.enable') %}
+    <script async src="https://cdn.eye-able.com/configs/www.stadtwerke-hersbruck.de.js"></script>
+	<script async src="https://cdn.eye-able.com/public/js/eyeAble.js"></script>
+	{% endif %}
+{% endblock %}
+
 {% block base_body_inner %}
 	{% set customBreadscrub = page.header.navigation.active.customFields.breadscrub %}
 	{% if customBreadscrub %}
